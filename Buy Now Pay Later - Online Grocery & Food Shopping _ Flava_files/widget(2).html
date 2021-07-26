@@ -1,0 +1,115 @@
+
+<!-- saved from url=(0489)https://widget.reviews.co.uk/rich-snippet-reviews-widgets/widget?version=13b&store=flavva&primaryClr=%23f47e27&neutralClr=%23cccccc&reviewTextClr=%23333333&widgetName=carousel&layout=fullWidth&numReviews=40&contentMode=company&hideDates=false&elementId=carousel-widget&origin=https%3A%2F%2Fflava.co.uk%2F%3Futm_source%3DGoogle%26utm_medium%3DGoogle%26utm_campaign%3DPPC1pDeal%26r%3DPPCFB%26gclid%3DCjwKCAjwuvmHBhAxEiwAWAYj-C_Vz5lyefX3bsnmZ__St1KwCWcRqdiblBFylStLoC3K-j4KFA19XhoCnFkQAvD_BwE -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head>
+<body style="margin: 0px;">
+<script src="./jquery.min.js.下载"></script>
+<style>
+            .RUKFloatingWidget {
+                height: 100%;
+            }
+            .RUKFloatingWidget--right {
+                height: 100%;
+            }
+
+
+            .RUKFloatingWidget.small {
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                margin-top: auto;
+                margin-bottom: auto;
+                left: 0;
+                z-index: 9999999;
+                max-width: 45px;
+                height: 230px;
+                transition-delay:1s;
+            }
+
+            .RUKFloatingWidget--right.small {
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                margin-top: auto;
+                margin-bottom: auto;
+                right: 0;
+                z-index: 9999999;
+                max-width: 45px;
+                height: 230px;
+                transition-delay:1s;
+            }
+        </style>
+<div id="richSnippetReviewsWidgets" class="RUK-SeoSnippetWidget">
+
+
+
+</div>
+<div id="render-widget-container">
+<script src="./dist.js.下载" type="text/javascript"></script>
+<div id="reviews-widget-summon-carousel"><iframe src="./widget.html" frameborder="0" width="100%" title="Reviews Carousel Widget" height="299"></iframe></div>
+<script>carouselWidget('reviews-widget-summon-carousel', { store: 'flavva',primaryClr: '#f47e27',neutralClr: '#cccccc',reviewTextClr: '#333333',layout: 'fullWidth',numReviews: '40',hideDates: false,version: '13b',contentMode: 'company',});</script>
+</div>
+<script>
+            var elementId = 'carousel-widget';
+            var heightOption = '700';
+
+            function resize(){
+                var height = $('#reviews-widget-summon-carousel > iframe').outerHeight();
+                var defaultHeight = getWidgetDefaultContainerHeight('carousel');
+                if(defaultHeight > height && 'carousel' == 'carousel') {
+                    height = defaultHeight;
+                }
+                if(isNaN(heightOption)) {
+                    height = heightOption;
+                }
+                window.parent.postMessage(JSON.stringify({
+                    action: 'resize',
+                    height: height,
+                    elementId: elementId
+                }),'*');
+            }
+
+            /*function jsonLD() {
+              window.parent.postMessage(JSON.stringify({
+                  action: 'jsonld',
+                  data: "",
+              }),'*');
+            }*/
+
+            //Set a default height based on the widget being rendered
+            function getWidgetDefaultContainerHeight(widgetName) {
+                var height = 200;
+                switch (widgetName) {
+                    case 'carousel':
+                        height = 297;
+                        break;
+                    default:
+                        height = 200;
+                }
+                return height;
+            }
+
+
+            $(window).resize(function() {
+              setTimeout(function(){
+                resize();
+              }, 100);
+            });
+            //Use this instead of document ready to get contained widget size after rendered
+            $("#reviews-widget-summon-carousel > iframe").on("load", function () {
+              resize();
+              setTimeout(function(){
+                resize();
+              }, 1150);
+            });
+
+            //Listen for orientationchange and resize after 1.15 secs
+            window.addEventListener("orientationchange", function() {
+                setTimeout(function(){ resize(); }, 1150);
+            }, false);
+            /*$(document).ready(function() {
+                setTimeout(jsonLD(), 1150);
+            });*/
+        </script>
+
+
+</body></html>
